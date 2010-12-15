@@ -48,10 +48,13 @@ describe 'Tuwaga' do
 
   describe 'converter' do
     [
+      #base x, symbols, number in decimal, number in base x
       [16, nil, 16, '10'],
       [16, '0123456789QWERTY', 773037414154, 'W3YE9TR70Q'],
       [10, '9876543210', 1234567890, '8765432109'],
-      [4, 'BLAH', 4, 'LB']
+      [4, 'BLAH', 4, 'LB'],
+      [2, '01', 0, '0'],
+      [16, nil, 10, 'a']
     ].each do |test|
       (base, symbols, number_in_decimal, number_in_base_x) = test
 

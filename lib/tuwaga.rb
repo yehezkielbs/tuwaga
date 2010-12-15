@@ -27,6 +27,8 @@ class Tuwaga
   def from_decimal input
     raise 'Input must be an integer' if (!input.is_a?(Integer))
 
+    return @symbols[0] if input == 0
+
     result = ''
     in_decimal = input
     while (in_decimal > 0) do

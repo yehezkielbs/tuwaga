@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s|
   s.name = 'tuwaga'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.summary = "Number converter from one number base to another"
   s.files = Dir['lib/**/*.rb'] + Dir['spec/**/*.rb']
   s.require_path = 'lib'
