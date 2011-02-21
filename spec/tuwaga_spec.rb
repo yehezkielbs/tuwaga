@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../lib/tuwaga'
+require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe 'Tuwaga' do
   describe 'constructor' do
@@ -7,7 +7,10 @@ describe 'Tuwaga' do
       dec_system.should be_an_instance_of(Tuwaga)
       dec_system.base.should == 10
       dec_system.symbols.should == ('0'..'9').to_a
-      dec_system.symbol_value_map.should == Hash[* ('0'..'9').to_a.enum_with_index.to_a.flatten]
+
+      expected_symbol_value_map = {}
+      ('0'..'9').to_a.each_with_index { |item, index| expected_symbol_value_map[item] = index }
+      dec_system.symbol_value_map.should == expected_symbol_value_map
     end
 
     it 'should be able to construct Tuwaga with given settings' do

@@ -8,7 +8,8 @@ class Tuwaga
     @symbols = blank?(symbols) ? guess_symbols : symbols.split('')
     validate_symbols
 
-    @symbol_value_map = Hash[* @symbols.enum_with_index.to_a.flatten]
+    @symbol_value_map = {}
+    @symbols.each_with_index { |item, index| @symbol_value_map[item] = index }
   end
 
   def to_decimal input
